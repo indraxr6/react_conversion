@@ -13,10 +13,10 @@ class Main extends React.Component{
         return (
             <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/bmi" component={About} />
-                <Route path="/bank" component={Contact} />
-                <Route path="/ppn" component={Contact} />
-                <Route path="/binary" component={Contact} />
+                <Route path="/bmi" component={Bank} />
+                <Route path="/bank" component={Binary} />
+                <Route path="/ppn" component={BMI} />
+                <Route path="/binary" component={PPN} />
 
 
             </Switch>
