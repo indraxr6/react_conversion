@@ -1,44 +1,43 @@
 import React, { Component } from 'react';
-import Alert from './Components/Alert';
+import Alert from '../Components/Alert';
 
 class BMI extends Component {
-    constructor() {
-        super();
-        this.state = {
-            weight: 0, 
-            height: 0,
-            bmi: 0,
-            bmiStatus: ""
-        }
-    }
-    
-
-    Hitung = () => {
-        let weight = this.state.weight;
+                
+    calc = () => {
+        let mass = this.state.mass;
         let height = this.state.height;
-        let bmi = weight / (height * height);
-        let bmiStatus = "";
+        let bmi = (mass / ((height * height) / 10000)).toFixed(2);
+        let category = "";
         if (bmi < 18.5) {
-            bmiStatus = "Underweight";
+            category = "Underweight";
+            console.log("Underweight");
+            console.log(bmi);
         }
         else if (bmi >= 18.5 && bmi <= 24.9) {
-            bmiStatus = "Normal";
+            category = "Normal";
+            console.log("Normal");
+            console.log(bmi);
         }
         else if (bmi >= 25 && bmi <= 29.9) {
-            bmiStatus = "Overweight";
+            category = "Overweight";
+            console.log("Overweight");
+            console.log(bmi);
         }
         else if (bmi >= 30) {
-            bmiStatus = "Obese";
+            category = "Obese";
+            console.log("Obese");
+            console.log(bmi);
+
         }
         this.setState({
             bmi,
-            bmiStatus
+            category
         });
     }
 
-    changeWeight = (event) => {
+    changeMass = (event) => {
         this.setState({
-            weight: event.target.value
+            mass: event.target.value
         });
     }
     changeHeight = (event) => {
@@ -47,55 +46,69 @@ class BMI extends Component {
         });
     }
 
-    // Alert
+      //input type number calculate BMI
+      constructor() {
+        super();
+        this.state = {
+            height: "",
+            mass: "", 
+            bmi: "",
+            category: ""
+        }
+      }
+
+    //category
     Alert = () => {
-        if (this.state.bmiStatus === "") {
+        if (this.state.category === "") {
             return <div></div>;
         }
-        if (this.state.bmiStatus === "Underweight") {
-            return <Alert type="danger" header="Underweight">
-                <p>Kekurangan Berat Badan</p>
+        if (this.state.category === "Underweight") {
+            return <Alert type="info" header="Underweight" >
+                <p>Less weight, Underweight</p>
             </Alert>
 
         }
-        if (this.state.bmiStatus === "Normal") {
+        if (this.state.category === "Normal") {
             return <Alert type="success" header="Normal">
-                <p>Normal</p>
+                <p>Healthy weight (Normal)</p>
             </Alert>
         }
-        if (this.state.bmiStatus === "Overweight") {
+        if (this.state.category === "Overweight") {
             return <Alert type="warning" header="Overweight">
-                <p>Kelebihan Berat Badan</p>
+                <p>At risk of overweight</p>
             </Alert>
         }
-        if (this.state.bmiStatus === "Obese") {
+        if (this.state.category === "Obese") {
             return <Alert type="danger" header="Obese">
-                <p>Obesitas</p>
+                <p>Obese</p>
             </Alert>
         }
     }
+
   
     render() {
         return (
             <div className="container col-md-6">
                 <div className="card">
                     <div className="card-header bg-secondary text-center text-white">
-                        <h3>Body Mass Index</h3>
+                        <h3>Body Mass Index Calculator</h3>
                     </div>
                     <div className="card-body">
                         <div className="form-group">
-                            <label>Berat</label>
-                            <input type="number" className="form-control" onChange={this.changeWeight} />
+                            <label>Mass</label>
+                            <input type="number" className="form-control" onChange={this.changeMass} />
                         </div>
                         <div className="form-group">
-                            <label>Tinggi</label>
+                            <label>Height :</label>
                             <input type="number" className="form-control" onChange={this.changeHeight} />
                         </div>
                         <div className="form-group">
-                            <button className="btn btn-info form-control mb-2" onClick={this.Hitung}>Hitung</button>
+                            <button className="btn btn-info form-control mb-2" onClick={this.calc}>Calculate</button>
                         </div>
-                        {/* bmi status with alert bootstrap */}
+                      
                         {this.Alert()}
+
+                      
                     </div>
                 </div>
             </div>
