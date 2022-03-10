@@ -28,7 +28,6 @@ class BMI extends Component {
             console.log("Obese");
             console.log(bmi);
         }
-
         this.setState({
             bmi,
             category
@@ -106,11 +105,7 @@ class BMI extends Component {
                         <div className="form-group">
                             <button className="btn btn-success form-control mb-2" onClick={this.calc}>Calculate</button>
                         </div>
-                        
-                      
                         {this.Alert()}
-
-                      
                     </div>
                 </div>
             </div>

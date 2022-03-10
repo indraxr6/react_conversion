@@ -1,21 +1,20 @@
 import React, { Component } from "react";
 
-class Binary extends Component {
+class Decimal extends Component {
     constructor() {
         super();
         this.state = {
-            biner: 0,
-            option: "",
+            decimal: 0,
+            option: "biner",
             result: 0
         }
     }
 
     convert = () => {
-        const biner = this.state.biner
-        const decimal = parseInt(biner, 2)
-        if (this.state.option === "decimal") {
+        const decimal = +this.state.decimal
+        if (this.state.option === "biner") {
             return this.setState({
-                result: decimal
+                result: decimal.toString(2)
             })
         } else if (this.state.option === "octal") {
             return this.setState({
@@ -28,9 +27,9 @@ class Binary extends Component {
         }
     }
 
-    changeBiner = (event) => {
+    changeDecimal = (event) => {
         this.setState({
-            biner: event.target.value
+            decimal: event.target.value
         })
     }
 
@@ -45,23 +44,23 @@ class Binary extends Component {
             <div className="container col-md-3">
                 <div className="card">
                     <div className="card-header bg-primary text-center text-white">
-                    <h3>Binary Converter</h3>
+                    <h3>Decimal Converter</h3>
                     </div>
                     <div className="card-body">
                         <div className="form-group">
-                            <label>Binary</label>
-                            <input type="number" className="form-control" onChange={this.changeBiner}></input>
+                            <label>Decimal</label>
+                            <input type="number" className="form-control" onChange={this.changeDecimal}></input>
                         </div>
                         <div className="form-group" onChange={this.changeOption}>
                             <label>Convert to</label>
                             <select className="form-control">
-                                <option value="decimal">Decimal</option>
+                                <option value="biner">Biner</option>
                                 <option value="octal">Octal</option>
                                 <option value="hexadecimal">Hexadecimal</option>
                             </select>
                         </div>
                         <div className="form-group">
-                        <button className="btn btn-success form-control" onClick={this.convert}>Convert</button>
+                        <button className="btn btn-success text-white form-control" onClick={this.convert}>Convert</button>
                         </div>
                         <h5 className="p-3 form-control text-center">{this.state.result}</h5>
                     </div>
@@ -71,4 +70,4 @@ class Binary extends Component {
     }
 }
 
-export default Binary;
+export default Decimal;

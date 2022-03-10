@@ -24,11 +24,6 @@ class Navbar extends React.Component{
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/binary" className="nav-link text-white">
-                                Binary
-                            </Link>
-                        </li>
-                        <li className="nav-item">
                             <Link to="/bmi" className="nav-link text-white">
                                 BMI
                             </Link>
@@ -36,6 +31,26 @@ class Navbar extends React.Component{
                         <li className="nav-item">
                             <Link to="/ppn" className="nav-link text-white">
                                 PPN
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/binary" className="nav-link text-white">
+                                Binary
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/decimal" className="nav-link text-white">
+                                Decimal
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/hexa" className="nav-link text-white">
+                                Hexadecimal
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/octal" className="nav-link text-white">
+                                Octal
                             </Link>
                         </li>
                     </ul>
