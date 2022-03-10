@@ -27,8 +27,8 @@ class BMI extends Component {
             category = "Obese";
             console.log("Obese");
             console.log(bmi);
-
         }
+
         this.setState({
             bmi,
             category
@@ -45,7 +45,6 @@ class BMI extends Component {
             height: event.target.value
         });
     }
-
       //input type number calculate BMI
       constructor() {
         super();
@@ -80,31 +79,34 @@ class BMI extends Component {
         }
         if (this.state.category === "Obese") {
             return <Alert type="danger" header="Obese">
-                <p>Obese</p>
+                <p>Obese (Bruh)</p>
             </Alert>
         }
     }
 
-  
     render() {
         return (
-            <div className="container col-md-6">
+            
+            <div className="container col-md-3">
                 <div className="card">
-                    <div className="card-header bg-secondary text-center text-white">
+                    <div className="card-header bg-primary text-center text-white">
                         <h3>Body Mass Index Calculator</h3>
                     </div>
                     <div className="card-body">
                         <div className="form-group">
-                            <label>Mass</label>
+                            <label>Mass :</label>
                             <input type="number" className="form-control" onChange={this.changeMass} />
                         </div>
                         <div className="form-group">
                             <label>Height :</label>
                             <input type="number" className="form-control" onChange={this.changeHeight} />
                         </div>
+                        <br></br>
+
                         <div className="form-group">
-                            <button className="btn btn-info form-control mb-2" onClick={this.calc}>Calculate</button>
+                            <button className="btn btn-success form-control mb-2" onClick={this.calc}>Calculate</button>
                         </div>
+                        
                       
                         {this.Alert()}
 

@@ -5,7 +5,7 @@ class Navbar extends React.Component{
     render(){
         return(
             <div className="navbar navbar-expand-lg bg-primary navbar-light">
-                <a className="navbar-brand" href="#">
+                <a className="navbar-brand text-white" href="#">
                     Conversion App
                 </a>
 
@@ -19,22 +19,22 @@ class Navbar extends React.Component{
                 <div id="menu" className="navbar-collapse collpase">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
-                            <Link to="/bank" className="nav-link">
+                            <Link to="/bank" className="nav-link text-white">
                                 Bank
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/binary" className="nav-link">
+                            <Link to="/binary" className="nav-link text-white">
                                 Binary
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/bmi" className="nav-link">
+                            <Link to="/bmi" className="nav-link text-white">
                                 BMI
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/ppn" className="nav-link">
+                            <Link to="/ppn" className="nav-link text-white">
                                 PPN
                             </Link>
                         </li>

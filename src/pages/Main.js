@@ -1,7 +1,7 @@
 import React from "react"
 import { Route, Switch } from "react-router-dom";
 import Home from "./pages/Home"
-
+    
 import Bank from "./pages/Bank"
 import Binary from "./pages/Binary"
 import BMI from "./pages/BMI"
